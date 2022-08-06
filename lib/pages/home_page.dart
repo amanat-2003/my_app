@@ -14,13 +14,13 @@ class HomePage extends StatelessWidget {
             textScaleFactor: 1.5,
             style: TextStyle(
               fontFamily: 'PressStart2P',
-              color: Colors.black87,
+              // color: Colors.black87,
               fontStyle: FontStyle.normal,
             )),
       ),
       body: Center(
         child: Container(
-          child: Text("Hello How are you"),
+          child: Text("How are you"),
         ),
       ),
       drawer: Drawer(
