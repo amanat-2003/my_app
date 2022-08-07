@@ -1,7 +1,8 @@
 // ignore_for_file: unused_import, avoid_unnecessary_containers, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:my_app/login_page.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_app/pages/login_page.dart';
 import 'package:my_app/pages/home_page.dart';
 
 void main() {
@@ -16,11 +17,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
       themeMode: ThemeMode.system,
-      theme: ThemeData(primarySwatch: Colors.lime),
+      theme: ThemeData(
+        primarySwatch: Colors.lime,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        // fontFamily: GoogleFonts.adventPro().fontFamily,
+        // primaryTextTheme: GoogleFonts.lancelotTextTheme(),
+      ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
-      initialRoute: "/home",
+      // initialRoute: "/home",
       routes: {
         "/": (context) => LoginPage(),
         "/home": (context) => HomePage(),
