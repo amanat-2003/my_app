@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_app/pages/login_page.dart';
 import 'package:my_app/pages/home_page.dart';
 import 'package:my_app/utils/routes.dart';
+import 'package:my_app/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,15 +20,8 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: ThemeData(
-        primarySwatch: Colors.lime,
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // fontFamily: GoogleFonts.adventPro().fontFamily,
-        // primaryTextTheme: GoogleFonts.lancelotTextTheme(),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: MyThemes.lightTheme(context),
+      darkTheme: MyThemes.darkTheme(context),
       initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),

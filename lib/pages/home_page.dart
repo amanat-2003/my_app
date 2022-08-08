@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("My App",
-            textScaleFactor: 1.5,
+            textScaleFactor: 1.4,
             style: TextStyle(
               fontFamily: 'PressStart2P',
               // color: Colors.black87,
