@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MyThemes {
   static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
-        primarySwatch: Colors.lime,
+        primarySwatch: Colors.blue,
         fontFamily: GoogleFonts.lato().fontFamily,
         appBarTheme: AppBarTheme(
           color: Colors.white,
