@@ -2,6 +2,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -23,10 +24,7 @@ class HomePage extends StatelessWidget {
           child: Text("How are you"),
         ),
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.pink.shade400,
-        elevation: 16,
-      ),
+      drawer: MyDrawer(),
       bottomNavigationBar: BottomAppBar(),
     );
   }
