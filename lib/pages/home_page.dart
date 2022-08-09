@@ -8,6 +8,14 @@ import 'package:my_app/models/catalog.dart';
 import 'package:my_app/widgets/drawer.dart';
 import 'package:my_app/widgets/item_widget.dart';
 
+// extension AssetBundleX on AssetBundle {
+//   static Future<String> loadStringWithoutIsolate(String key) async {
+//     final ByteData data = await load(key);
+
+//     return utf8.decode(data.buffer.asUint8List());
+//   }
+// }
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -25,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     await Future.delayed(Duration(seconds: 2));
     var catalogJson = await rootBundle.loadString("assests/files/catalog.json");
+    // var catalogJson = await AssetBundleX.loadStringWithoutIsolate("assests/files/catalog.json");
     await Future.delayed(Duration(seconds: 2));
     print(catalogJson);
     var decodedData = jsonDecode(catalogJson);
