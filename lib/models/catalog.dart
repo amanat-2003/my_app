@@ -5,7 +5,9 @@ class CatalogModel {
         name: "iPhone 12 Pro",
         desc: "Apple iPhone 12th generation",
         price: 999,
-        color: "#33505a")
+        color: "#33505a",
+        textLarge: "12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+        )
   ];
 }
 
@@ -15,20 +17,24 @@ class Item {
   final String desc;
   final num price;
   final String color;
+  final String textLarge;
   Item(
       {required this.id,
       required this.name,
       required this.desc,
       required this.price,
-      required this.color});
+      required this.color,
+      required this.textLarge});
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
-        id: map["id"],
-        name: map["name"],
-        desc: map["desc"],
-        price: map["price"],
-        color: map["color"]);
+      id: map["id"],
+      name: map["name"],
+      desc: map["desc"],
+      price: map["price"],
+      color: map["color"],
+      textLarge: map["textLarge"],
+    );
   }
 
   toMap() => {
@@ -37,6 +43,7 @@ class Item {
         "desc": desc,
         "price": price,
         "color": color,
+        "textLarge": textLarge,
       };
 }
 
