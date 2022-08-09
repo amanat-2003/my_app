@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_app/models/catalog.dart';
 
 class ItemWidget extends StatelessWidget {
-  final Item item;
+  final item;
   const ItemWidget({Key? key, required this.item}) : super(key: key);
 
   @override
@@ -15,7 +15,7 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print("${item.name} is pressed");
         },
-        leading: Image.network(item.imageUrl),
+        // leading: Image.network(item.imageUrl),
         title: Text(item.name),
         subtitle: Text(item.desc),
         // visualDensity: VisualDensity(horizontal: 1),
