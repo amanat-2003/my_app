@@ -5,7 +5,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_app/models/catalog.dart';
-import 'package:my_app/models/products.dart';
 import 'package:my_app/widgets/drawer.dart';
 import 'package:my_app/widgets/item_widget.dart';
 
@@ -17,17 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Products> productList = [
-    Products(
-        id: 1,
-        name: "iPhone 12 Pro",
-        desc: "Apple iPhone 12th generation",
-        price: 999,
-        color: "#33505a",
-        // imageUrl:
-        //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"
-        ),
-  ];
   @override
   void initState() {
     super.initState();
@@ -37,17 +25,11 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     await Future.delayed(Duration(seconds: 2));
     var catalogJson = await rootBundle.loadString("assests/files/catalog.json");
-    print(catalogJson);
-    // var decodedData = jsonDecode(catalogJson);
-
-    // var productsData = decodedData["products"];
-    // print(productsData);
+    var decodedData = jsonDecode(catalogJson);
+    var productsData = decodedData["products"];
     setState(() {
-      // ProductsModel.items =
-      // List.from(productsData).map<Products>((e) => Products.fromMap(e)).toList();
-      // List.from(productsData)
-      //     .map<Products>((e) => Products.fromJson(e))
-      //     .toList();
+      CatalogModel.items =
+          List.from(productsData).map<Item>((e) => Item.fromMap(e)).toList();
     });
   }
 
@@ -65,18 +47,16 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        child: (productList.isNotEmpty)
-            ? ListView.builder(
-                itemCount: productList.length,
-                itemBuilder: (context, index) {
-                  return ItemWidget(
-                    item: productList[index],
-                  );
-                },
-              )
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
+        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)? ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogModel.items[index],
+            );
+          },
+        ) : Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
       drawer: MyDrawer(),
       bottomNavigationBar: BottomAppBar(),
