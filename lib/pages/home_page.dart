@@ -105,17 +105,11 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          Image.asset(catalog.imageAddress).box.rounded.p12.color(MyThemes.creamColor).make().p8().whOneThird(context)
+          Image.network(catalog.imageUrl).box.rounded.p12.color(MyThemes.creamColor).make().p8().whOneThird(context),
+          // Image.asset(catalog.imageAddress).box.rounded.p12.color(MyThemes.creamColor).make().p8().whOneThird(context)
         ],
       )
     ).white.square(150).rounded.make().py12();
-    // return VxBox(
-    //   child: Row(
-    //     children: [
-    //       // Image.network(catalog.imageUrl),
-    //       Image.asset(catalog.imageAddress)
-    //     ],
-    //   )
-    // ).white.square(100).roundedLg.make().py12();
+
   }
 }
