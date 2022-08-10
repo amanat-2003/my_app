@@ -41,11 +41,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyThemes.creamColor,
       body: SafeArea(
         child: Container(
           padding: Vx.m16,
-          child: CatalogHeader(),
-          
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CatalogHeader(),
+              if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+                CatalogList().expand()
+              else
+                Center(
+                  child: CircularProgressIndicator(),
+                )
+            ],
+          ),
         ),
       ),
     );
@@ -64,5 +75,47 @@ class CatalogHeader extends StatelessWidget {
         "Trending Products".text.xl.make(),
       ],
     );
+  }
+}
+
+class CatalogList extends StatelessWidget {
+  const CatalogList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: CatalogModel.items.length,
+      itemBuilder: (context, index) {
+        final catalog = CatalogModel.items[index];
+        return CatalogItem(
+          catalog: catalog,
+        );
+      },
+    );
+  }
+}
+
+class CatalogItem extends StatelessWidget {
+  final Item catalog;
+
+  const CatalogItem({super.key, required this.catalog});
+  @override
+  Widget build(BuildContext context) {
+    return VxBox(
+      child: Row(
+        children: [
+          Image.asset(catalog.imageAddress)
+        ],
+      )
+    ).white.square(150).rounded.make().py12();
+    // return VxBox(
+    //   child: Row(
+    //     children: [
+    //       // Image.network(catalog.imageUrl),
+    //       Image.asset(catalog.imageAddress)
+    //     ],
+    //   )
+    // ).white.square(100).roundedLg.make().py12();
   }
 }

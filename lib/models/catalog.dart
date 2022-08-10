@@ -9,14 +9,17 @@ class Item {
   final num price;
   final String color;
   final String imageUrl;
+  final String imageAddress;
 
-  Item(
-      {required this.id,
-      required this.name,
-      required this.desc,
-      required this.price,
-      required this.color,
-      required this.imageUrl});
+  Item({
+    required this.id,
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.color,
+    required this.imageUrl,
+    required this.imageAddress
+  });
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
@@ -25,7 +28,9 @@ class Item {
         desc: map["desc"],
         price: map["price"],
         color: map["color"],
-        imageUrl: map["imageUrl"]);
+        imageUrl: map["imageUrl"],
+        imageAddress: map["imageAddress"],
+        );
   }
 
   toMap() => {
@@ -34,7 +39,8 @@ class Item {
         "desc": desc,
         "price": price,
         "color": color,
-        "imageUrl": imageUrl
+        "imageUrl": imageUrl,
+        "imageAddress": imageAddress
       };
 }
 
