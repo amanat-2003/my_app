@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    // await Future.delayed(Duration(seconds: 2));
     var catalogJson = await rootBundle.loadString("assests/files/catalog.json");
     print(catalogJson);
     var decodedData = jsonDecode(catalogJson);
@@ -105,7 +105,7 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
       child: Row(
         children: [
-          Image.asset(catalog.imageAddress)
+          Image.asset(catalog.imageAddress).box.rounded.p12.color(MyThemes.creamColor).make().p8().whOneThird(context)
         ],
       )
     ).white.square(150).rounded.make().py12();
