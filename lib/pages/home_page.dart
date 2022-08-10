@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:my_app/models/catalog.dart';
 import 'package:my_app/widgets/drawer.dart';
 import 'package:my_app/widgets/item_widget.dart';
+import 'package:my_app/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,9 +41,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [],
+      body: SafeArea(
+        child: Container(
+          padding: Vx.m16,
+          child: CatalogHeader(),
+          
+        ),
       ),
+    );
+  }
+}
+
+class CatalogHeader extends StatelessWidget {
+  const CatalogHeader({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "Catalog App".text.xl4.bold.color(MyThemes.darkBluishColor).make(),
+        "Trending Products".text.xl.make(),
+      ],
     );
   }
 }
