@@ -6,7 +6,8 @@
             "desc": "Apple iPhone 12th generation",
             "price": 999,
             "color": "#33505a",
-            "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000"
+            "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1604021661000",
+            "imageAddress":"assests/pictures/catalog_items/1.png"
         },
         {
             "id": 2,
@@ -14,7 +15,8 @@
             "desc": "Google Pixel phone 5th generation",
             "price": 699,
             "color": "#00ac51",
-            "imageUrl": "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png"
+            "imageUrl": "https://www.telstra.com.au/content/dam/tcom/lego/2020/plans-devices/mobiles/google-pixel-5/shared-google-pixel-5-black-05-900x1200.png",
+            "imageAddress":"assests/pictures/catalog_items/2.png"
         },
         {
             "id": 3,
@@ -22,7 +24,8 @@
             "desc": "Apple Macbook air with apple silicon",
             "price": 1099,
             "color": "#e0bfae",
-            "imageUrl": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png"
+            "imageUrl": "https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP825/macbookair.png",
+            "imageAddress":"assests/pictures/catalog_items/3.png"
         },
         {
             "id": 4,
@@ -30,7 +33,8 @@
             "desc": "Sony Playstation 5th generation",
             "price": 500,
             "color": "#544ee4",
-            "imageUrl": "https://i1.wp.com/freepngimages.com/wp-content/uploads/2020/07/Playstation-5-games-console-transparent-background-png-image.png?fit=1000%2C1000"
+            "imageUrl": "https://i1.wp.com/freepngimages.com/wp-content/uploads/2020/07/Playstation-5-games-console-transparent-background-png-image.png?fit=1000%2C1000",
+            "imageAddress":"assests/pictures/catalog_items/4.webp"
         },
         {
             "id": 5,
@@ -38,7 +42,8 @@
             "desc": "Apple Aipods Pro 1st generation",
             "price": 200,
             "color": "#e3e4e9",
-            "imageUrl": "https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png"
+            "imageUrl": "https://crdms.images.consumerreports.org/c_lfill,w_598/prod/products/cr/models/400116-wireless-portable-headphones-apple-airpods-pro-10009323.png",
+            "imageAddress":"assests/pictures/catalog_items/5.png"
         },
         {
             "id": 6,
@@ -46,7 +51,8 @@
             "desc": "Apple iPad Pro 2020 edition",
             "price": 799,
             "color": "#f73984",
-            "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-silver-202003_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583551131102"
+            "imageUrl": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-silver-202003_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1583551131102",
+            "imageAddress":"assests/pictures/catalog_items/6.png"
         },
         {
             "id": 7,
@@ -54,7 +60,8 @@
             "desc": "Samsung Galaxy S21 Ultra 2021 edition",
             "price": 1299,
             "color": "#1c1c1c",
-            "imageUrl": "https://lh3.googleusercontent.com/qRQPjHrhRVIs-xnfNSyiPXOH2vH97ylMacgbTKebqJtRfNH3LlYo8pN-5igsLDWUH62tGl5zNpTsl5xd8SprzGmXoCEmWFOi2-2cQVGS-r3PaRXHt62DmJHq-jrYX0UQvWZ9BA=s800-c"
+            "imageUrl": "https://lh3.googleusercontent.com/qRQPjHrhRVIs-xnfNSyiPXOH2vH97ylMacgbTKebqJtRfNH3LlYo8pN-5igsLDWUH62tGl5zNpTsl5xd8SprzGmXoCEmWFOi2-2cQVGS-r3PaRXHt62DmJHq-jrYX0UQvWZ9BA=s800-c",
+            "imageAddress":"assests/pictures/catalog_items/7.png"
         },
         {
             "id": 8,
@@ -62,7 +69,8 @@
             "desc": "Samsung Galaxy S21 2021 edition",
             "price": 899,
             "color": "#7c95eb",
-            "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/za/galaxy-s21/gallery/za-clear-cover-galaxy-s21-5g-ef-qg991ttegww-363168624?$720_576_PNG$"
+            "imageUrl": "https://images.samsung.com/is/image/samsung/p6pim/za/galaxy-s21/gallery/za-clear-cover-galaxy-s21-5g-ef-qg991ttegww-363168624?$720_576_PNG$",
+            "imageAddress":"assests/pictures/catalog_items/8.webp"
         }
     ]
 }
