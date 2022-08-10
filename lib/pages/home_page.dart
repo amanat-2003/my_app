@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:my_app/models/catalog.dart';
 import 'package:my_app/widgets/drawer.dart';
 import 'package:my_app/widgets/item_widget.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,57 +40,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("My App",
-            textScaleFactor: 1.4,
-            style: TextStyle(
-              fontFamily: 'PressStart2P',
-              // color: Colors.black87,
-              fontStyle: FontStyle.normal,
-            )),
+      body: Column(
+        children: [],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-        child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 16,
-                  crossAxisSpacing: 16,
-                ),
-                itemBuilder: (context, index) {
-                  final item = CatalogModel.items[index];
-                  return Card(
-                    clipBehavior: Clip.antiAlias,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10))),
-                    child: GridTile(
-                      header: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration:
-                            BoxDecoration(color: Colors.blueAccent.shade400),
-                        child: Text(item.name,
-                            style: TextStyle(color: Colors.white)),
-                      ),
-                      footer: Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration:
-                            BoxDecoration(color: Colors.black),
-                        child: Text("\$ ${item.price}",
-                            style: TextStyle(color: Colors.white)),
-                      ),
-                      child: Image.network(item.imageUrl),
-                    ),
-                  );
-                },
-                itemCount: CatalogModel.items.length,
-              )
-            : Center(
-                child: CircularProgressIndicator(),
-              ),
-      ),
-      drawer: MyDrawer(),
-      bottomNavigationBar: BottomAppBar(),
     );
   }
 }
