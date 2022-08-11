@@ -13,7 +13,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lime.shade100,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -42,6 +44,10 @@ class HomeDetailPage extends StatelessWidget {
                           .xl
                           .make(),
                       10.heightBox,
+                      "As one and both and then no or obeisance i. I raven off dirges while the. I this the name radiant many, a fast unbrokenquit oer and bird tapping see the tell. When dreams that grim tossed and nothing thee. My shore this if bust tell chamber all, fancy flirt."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make().px12(),
                     ],
                   ).pSymmetric(v: 50, h: 10),
                 ),
@@ -60,7 +66,8 @@ class HomeDetailPage extends StatelessWidget {
                 .text
                 .color(MyThemes.darkBluishColor)
                 .bold
-                .xl3.red600
+                .xl3
+                .red600
                 .make(),
             ElevatedButton(
               onPressed: () {},
@@ -70,8 +77,8 @@ class HomeDetailPage extends StatelessWidget {
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
-              child: "Buy".text.make(),
-            ).wh(100, 45)
+              child: "Add to cart".text.make(),
+            ).wh(120, 45)
           ],
         ).pSymmetric(h: 30, v: 15),
       ),
