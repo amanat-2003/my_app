@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:my_app/pages/home_detail_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 import '../../models/catalog.dart';
 import '../../widgets/themes.dart';
@@ -14,8 +14,15 @@ class CatalogList extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         final Item catalog = CatalogModel.items[index];
-        return CatalogItem(
-          catalog: catalog,
+        return InkWell(
+          onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeDetailPage(catalog: catalog),
+              )),
+          child: CatalogItem(
+            catalog: catalog,
+          ),
         );
       },
       itemCount: CatalogModel.items.length,
@@ -33,7 +40,10 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
         child: Row(
       children: [
-        CatalogImage(image: catalog.imageUrl),
+        Hero(
+          tag: Key("${catalog.id} image"),
+          child: CatalogImage(image: catalog.imageUrl),
+        ),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,13 +58,15 @@ class CatalogItem extends StatelessWidget {
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,
                   children: [
-                    "\$${catalog.price}".text.bold.xl.make(),
+                    "\$${catalog.price}".text.bold.xl.color(MyThemes.darkBluishColor).make(),
                     ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(MyThemes.darkBluishColor),
-                        shape: MaterialStateProperty.all(StadiumBorder(),)
-                      ),
+                          backgroundColor: MaterialStateProperty.all(
+                              MyThemes.darkBluishColor),
+                          shape: MaterialStateProperty.all(
+                            StadiumBorder(),
+                          )),
                       child: "Buy".text.make(),
                     )
                   ],
