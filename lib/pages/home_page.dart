@@ -26,11 +26,12 @@ class _HomePageState extends State<HomePage> {
 
   loadData() async {
     await Future.delayed(Duration(seconds: 2));
-    final catalogJson = await rootBundle.loadString("assests/files/catalog.json");
+    final catalogJson =
+        await rootBundle.loadString("assests/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
     var productsData = decodedData["products"];
-      CatalogModel.items =
-          List.from(productsData).map<Item>((e) => Item.fromMap(e)).toList();
+    CatalogModel.items =
+        List.from(productsData).map<Item>((e) => Item.fromMap(e)).toList();
     setState(() {});
   }
 
@@ -101,22 +102,40 @@ class CatalogItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return VxBox(
-      child: Row(
-        children: [
-          CatalogImage(image: catalog.imageUrl),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                catalog.name.text.color(MyThemes.darkBluishColor).lg.bold.make(),
-                catalog.desc.text.textStyle(context.captionStyle).make(),
-              ],
-            ),
-          )
-        ],
-      )
-    ).rounded.white.square(150).make().py12();
+        child: Row(
+      children: [
+        CatalogImage(image: catalog.imageUrl),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              catalog.name.text.color(MyThemes.darkBluishColor).lg.bold.make(),
+              catalog.desc.text.textStyle(context.captionStyle).make(),
+              10.heightBox,
+              Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: ButtonBar(
+                  alignment: MainAxisAlignment.spaceBetween,
+                  buttonPadding: EdgeInsets.zero,
+                  children: [
+                    "\$${catalog.price}".text.bold.xl.make(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(MyThemes.darkBluishColor),
+                        shape: MaterialStateProperty.all(StadiumBorder(),)
+                      ),
+                      child: "Buy".text.make(),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        )
+      ],
+    )).rounded.white.square(150).make().py12();
   }
 }
 
@@ -127,6 +146,14 @@ class CatalogImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(image).box.color(Colors.lime.shade100).px12.py1.roundedSM.make().p12().whPCT(context: context, widthPCT: 45, heightPCT: 100);
+    return Image.network(image)
+        .box
+        .color(Colors.lime.shade100)
+        .px12
+        .py1
+        .roundedSM
+        .make()
+        .p12()
+        .whPCT(context: context, widthPCT: 45, heightPCT: 100);
   }
 }
