@@ -104,13 +104,15 @@ class CatalogItem extends StatelessWidget {
       child: Row(
         children: [
           CatalogImage(image: catalog.imageUrl),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              catalog.name.text.color(MyThemes.darkBluishColor).lg.bold.make(),
-              catalog.desc.text.textStyle(context.captionStyle).make(),
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                catalog.name.text.color(MyThemes.darkBluishColor).lg.bold.make(),
+                catalog.desc.text.textStyle(context.captionStyle).make(),
+              ],
+            ),
           )
         ],
       )
