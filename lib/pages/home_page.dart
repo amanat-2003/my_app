@@ -10,8 +10,9 @@ import 'package:my_app/widgets/item_widget.dart';
 import 'package:my_app/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'home_widgets/catalog_header.dart';
-import 'home_widgets/catalog_list.dart';
+import '../widgets/home_widgets/catalog_header.dart';
+import '../widgets/home_widgets/catalog_list.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
