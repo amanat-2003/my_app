@@ -12,7 +12,7 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lime.shade100,
+      backgroundColor: Theme.of(context).canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
@@ -30,22 +30,22 @@ class HomeDetailPage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: Theme.of(context).cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
                       catalog.name.text
-                          .color(MyThemes.darkBluishColor)
+                          .color(context.accentColor)
                           .xl4
                           .bold
                           .make(),
-                      catalog.desc.text
+                      catalog.desc.text.color(Theme.of(context).indicatorColor)
                           .textStyle(context.captionStyle)
                           .xl
                           .make(),
                       10.heightBox,
                       "As one and both and then no or obeisance i. I raven off dirges while the. I this the name radiant many, a fast unbrokenquit oer and bird tapping see the tell. When dreams that grim tossed and nothing thee. My shore this if bust tell chamber all, fancy flirt."
-                          .text
+                          .text.color(Theme.of(context).indicatorColor)
                           .textStyle(context.captionStyle)
                           .make().px12(),
                     ],
@@ -57,7 +57,7 @@ class HomeDetailPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: Theme.of(context).cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -73,7 +73,7 @@ class HomeDetailPage extends StatelessWidget {
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(MyThemes.darkBluishColor),
+                      MaterialStateProperty.all(context.theme.buttonColor),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
                   )),
